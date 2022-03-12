@@ -17,7 +17,33 @@
   </head>
 
   <body>
-    
+    <header class="header">
+      <h1 class="header__tit text-center">農村地方美食小吃特色料理</h1>
+    </header>
+    <main class="main container mx-auto">
+      <div class="sift">
+        <div class="sift__head">
+          <select class="form__sel" name="cityFilter" id="City"></select>
+          <select class="form__sel" name="townFilter" id="Town">
+            <option class="form__option" value="" selected disabled>請選擇鄉鎮區...</option>
+          </select>
+        </div>
+        <div class="sift__body">
+          檢視模式:
+          <button class="btn btn-cancel" type="button"><i class="fa-solid fa-th-list"></i></button>
+          <button class="btn btn-cancel" type="button"><i class="fa-solid fa-align-justify"></i></button>
+          <button class="btn btn-cancel" type="button"><i class="fa-solid fa-th-large"></i></button>
+        </div>
+      </div>
+      <div class="cardBox" id="CardBox"></div>
+    </main>
+    <footer class="footer">
+      <p class="footer__text">政府資料開放平台</p>
+      <a href="https://data.gov.tw/dataset/6037" class="footer__link">https://data.gov.tw/dataset/6037</a>
+    </footer>
+    <div class="loader" id="Loading">
+      <img src="./images/load.gif" alt="loading gif" class="loader__img mx-auto" width="200" height="200">
+    </div>
   </body>
 
 </html>
