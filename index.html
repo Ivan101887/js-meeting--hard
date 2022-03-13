@@ -9,10 +9,10 @@
     <meta name="keywords" content="特色料理, 美食, 小吃, 農村, 特色農產, 農產, 料理">
     <title>農村地方美食小吃特色料理</title>
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./styles/index.min.css">
+    <link rel="stylesheet" href="./styles/all.min.css">
     <script src="./js/main.js" defer></script>
   </head>
 
@@ -21,27 +21,36 @@
       <h1 class="header__tit text-center">農村地方美食小吃特色料理</h1>
     </header>
     <main class="main container mx-auto">
-      <div class="sift">
-        <div class="sift__head">
-          <select class="form__sel" name="cityFilter" id="City"></select>
+      <div class="toolBar">
+        <div class="form">
+          <select class="form__sel" name="cityFilter" id="City">
+            <option class="form__option" value="" selected disabled>請選擇行政區域...</option>
+          </select>
           <select class="form__sel" name="townFilter" id="Town">
             <option class="form__option" value="" selected disabled>請選擇鄉鎮區...</option>
           </select>
         </div>
-        <div class="sift__body">
+        <div class="disMode">
           檢視模式:
-          <button class="btn btn-cancel" type="button"><i class="fa-solid fa-th-list"></i></button>
-          <button class="btn btn-cancel" type="button"><i class="fa-solid fa-align-justify"></i></button>
-          <button class="btn btn-cancel" type="button"><i class="fa-solid fa-th-large"></i></button>
+          <button class="btn btn-cancel" type="button"><i class="fa fa-th-list"></i></button>
+          <button class="btn btn-cancel" type="button"><i class="fa fa-align-justify"></i></button>
+          <button class="btn btn-cancel" type="button"><i class="fa fa-th-large"></i></button>
         </div>
       </div>
-      <div class="cardBox" id="CardBox"></div>
+      <ul class="cardBox" id="CardBox">
+        <li></li>
+      </ul>
     </main>
     <footer class="footer">
-      <p class="footer__text">政府資料開放平台</p>
-      <a href="https://data.gov.tw/dataset/6037" class="footer__link">https://data.gov.tw/dataset/6037</a>
+      <div class="container mx-auto">
+        <p class="footer__co">Cmoney全曜財金資訊</p>
+        <p class="footer__resource">
+          資料來源: 
+          <a href="https://data.gov.tw/dataset/6037" class="footer__link">政府資料開放平台</a>
+        </p>
+      </div>
     </footer>
-    <div class="loader" id="Loading">
+    <div class="loader js-loader" id="Loading">
       <img src="./images/load.gif" alt="loading gif" class="loader__img mx-auto" width="200" height="200">
     </div>
   </body>

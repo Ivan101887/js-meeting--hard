@@ -1,0 +1,235 @@
+
+
+@mixin pad{
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phone-lg {
+  @media screen and (max-width: 414px) {
+    @content;
+  } 
+}
+
+@mixin phone-md {
+  @media screen and (max-width: 375px) {
+    @content;
+  } 
+}
+@mixin phone-sm {
+  @media screen and (max-width: 320px) {
+    @content;
+  } 
+}
+
+
+html {
+  font: {
+    size: 16px;
+    family: "Arial", "Helvetica", "微軟正黑體", "sans-serif";
+  }
+  background: {
+    color: #eee;
+  }
+}
+/* --- Module --- */
+.header {
+  padding: {
+    top: 32px;
+    bottom: 35px;
+  }
+  @include phone-md {
+    padding: {
+      top: 28px;
+      bottom: 30px;
+    }
+  }
+  @include phone-sm {
+    padding: {
+      top: 24px;
+      bottom: 26px;
+    }
+  }
+  &__tit {
+    font: {
+      size: 2rem;
+      weight: 600;
+    }
+    @include phone-lg {
+      font: {
+        size: 30px;
+      }
+    }
+    @include phone-md {
+      font: {
+        size: 28px;
+      }
+    }
+    @include phone-sm {
+      font: {
+        size: 24px;
+      }
+    }
+  }
+}
+
+.form {
+  width: 50%;
+  border: {
+    radius: 1px;
+  }
+  display: inline-block;
+  &__sel {
+    border: {
+      radius: 5px;
+      width: 0;
+    }
+    font: {
+      size: 15px;
+    }
+    appearance: none;
+    background: {
+      image : url('../images/down-arrow.png');
+      repeat: no-repeat;
+      size: 6px 12px;
+      position: 95% 50%;
+      color: #ddd;
+    }
+    padding: 10px 30px 10px 15px;
+    margin: {
+      right: 5px;
+    }
+    @include phone-lg {
+      width: 100%;
+      margin: {
+        left: 0;
+        right: 0;
+      }
+      &+& {
+        margin: {
+          top: 15px;
+        }
+      }
+    }
+  }
+  &__option {
+    background: {
+      color: #fff;
+    }
+  }
+}
+.disMode {
+  width: 25%;
+  display: inline-block;
+  vertical-align: middle;
+  text: {
+    align: right;
+  }
+  color: #999;
+  font: {
+    weight: 600;
+  }
+  
+}
+.footer {
+  background: {
+    color: #999;
+  }
+  color: #ccc;
+  padding: {
+    top: 20px;
+    bottom: 20px;
+  }
+  &__co {
+    font: {
+      size: 20px;
+      weight: 600;
+    }
+    margin: {
+      bottom: 5px;
+    }
+  }
+  &__resource {
+    font: {
+      size: 14px;
+    }
+  }
+  &__link {
+    color: #fff;
+    text: {
+      decoration: none;
+    }
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: {
+    color: rgba(0, 0, 0, 0.7);
+  }
+  &__img {
+    margin: {
+      top: 45vh;
+    }
+    display: block;
+  }
+}
+
+.container {
+  max-width: 1200px;
+}
+.mx {
+  &-auto {
+    margin: {
+      right: auto;
+      left: auto;
+    }
+  }
+}
+.d {
+  &-flex {
+    display: flex;
+  }
+}
+.btn {
+  border: {
+    width: 0;
+  }
+  background: {
+    color: transparent;
+  }
+  font: {
+    size: 20px;
+  }
+  &-cancel {
+    color: #666;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  vertical-align: middle;
+}
+
+.text {
+  &-center {
+    text-align: center;
+  }
+}
+.border {
+  &-round {
+    border-radius: 3px;
+  }
+}
+
+.js {
+  &-loader {
+    display: none;
+  }
+  &-btn {
+    color: #000;
+  }
+}
