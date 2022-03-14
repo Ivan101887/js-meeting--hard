@@ -8,7 +8,7 @@
     <meta name="description" content="藏身鄉間巷弄裡的健康食材，精選多家餐廳供大家參考，假日不怕沒地方去">
     <meta name="keywords" content="特色料理, 美食, 小吃, 農村, 特色農產, 農產, 料理">
     <title>農村地方美食小吃特色料理</title>
-    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="avicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
       integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -20,7 +20,7 @@
     <header class="header">
       <h1 class="header__tit text-center">農村地方美食小吃特色料理</h1>
     </header>
-    <div class="primary container mx-auto d-flex">
+    <div class="container mx-auto d-flex">
       <main class="main">
         <div class="toolBar d-flex">
           <div class="form">
@@ -35,38 +35,59 @@
             檢視模式:
             <button class="btn btn-cancel" type="button"><i class="fa fa-th-list"></i></button>
             <button class="btn btn-cancel" type="button"><i class="fa fa-align-justify"></i></button>
-            <button class="btn btn-cancel" type="button"><i class="fa fa-th-large"></i></button>
+            <button class="btn btn-cancel js-btn" type="button"><i class="fa fa-th-large"></i></button>
           </div>
         </div>
-        <ul class="cardBox" id="CardBox">
-          <li></li>
+        <ul class="cardBox type-tbl js-bg__white" id="Content">
+          <li class="card">
+            <div class="card__wrap d-flex">
+              <figure class="card__imgWrap">
+                <img src="./images/20151102115236.jpg" alt="" class="card__img" loading="lazy">
+              </figure>
+              <div class="card__content">
+                <h2 class="card__name">
+                  <a href="javascript:;" class="card__link" target="_blank">胡梅宴餐防</a>
+                </h2>
+                <p class="card__index">1</p>
+                <div class="card__dist">
+                  <p class="card__city">苗栗縣</p>
+                  <em class="card__town">大湖鄉</em>
+                </div>
+                <p class="card__desc">
+                  一看字體好好優質不詳研究所，優勢婦女市委進步還可以沒人我現在，堅決一座顯示很好精英願意文字可能肌膚不能長時間體系，竟然那個提升街道計算建築模樣更新好激動回頭神經，漢化我一形象的說看著，故事用途面議不。
+                </p>
+                <p class="card__address text-ellipsis"> 專用廣播之外圖片榮譽鏡頭僅供屏東現象，加工老婆那個，指數警察寵物每年即可相同形象，發現地方生意，女孩好好報名，大陸作家。</p>
+              </div>
+            </div>
+          </li>
+
         </ul>
       </main>
       <aside class="adv">
-          <figure class="adv__imgContainer">
-            <a href="javascript:;" class="adv__link">
-              <img src="./images/adv1.png" alt="" class="adv__img">
-            </a>
-          </figure>
-          <figure class="adv__imgContainer">
-            <a href="javascript:;" class="adv__link">
-              <img src="./images/adv2.png" alt="" class="adv__img">
-            </a>
-          </figure>
-          <figure class="adv__imgContainer sticky-top">
-            <a href="javascript:;" class="adv__link">
-              <img src="./images/adv3.png" alt="" class="adv__img">
-            </a>
-          </figure>
+        <figure class="adv__imgContainer">
+          <a href="javascript:;" class="adv__link">
+            <img src="./images/adv1.png" alt="" class="adv__img">
+          </a>
+        </figure>
+        <figure class="adv__imgContainer">
+          <a href="javascript:;" class="adv__link">
+            <img src="./images/adv2.png" alt="" class="adv__img">
+          </a>
+        </figure>
+        <figure class="adv__imgContainer sticky-top">
+          <a href="javascript:;" class="adv__link">
+            <img src="./images/adv3.png" alt="" class="adv__img">
+          </a>
+        </figure>
       </aside>
     </div>
     <footer class="footer">
       <div class="container mx-auto">
-        <p class="footer__co">Cmoney全曜財金資訊</p>
-        <p class="footer__resource">
-          資料來源:
-          <a href="https://data.gov.tw/dataset/6037" class="footer__link">政府資料開放平台</a>
-        </p>
+        <h3 class="footer__co">Cmoney全曜財金資訊</h3>
+        <blockquote>
+          <p class="footer__resource">資料來源:<a href="https://data.gov.tw/dataset/6037" class="footer__link">政府資料開放平台</a>
+          </p>
+        </blockquote>
       </div>
     </footer>
     <div class="loader js-loader" id="Loading">
