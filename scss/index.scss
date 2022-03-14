@@ -1,4 +1,6 @@
+@charset "utf-8";
 
+@import "reset";
 
 @mixin pad{
   @media screen and (max-width: 768px) {
@@ -73,7 +75,32 @@ html {
     }
   }
 }
-
+.main {
+  width: 75%;
+  box-sizing: border-box;
+}
+.adv {
+  width: 25%;
+  padding: {
+    left: 15px;
+    right: 15px;
+  }
+  &__imgContainer {
+    margin: {
+      bottom: 15px;
+    }
+  }
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  box-sizing: border-box;
+}
+.toolBar {
+  justify-content: space-between;
+  align-items: center;
+}
 .form {
   width: 50%;
   border: {
@@ -121,7 +148,6 @@ html {
 }
 .disMode {
   width: 25%;
-  display: inline-block;
   vertical-align: middle;
   text: {
     align: right;
@@ -130,7 +156,6 @@ html {
   font: {
     weight: 600;
   }
-  
 }
 .footer {
   background: {
@@ -214,6 +239,12 @@ html {
   vertical-align: middle;
 }
 
+.sticky {
+  &-top {
+    position: sticky;
+    top: 0;
+  }
+}
 .text {
   &-center {
     text-align: center;

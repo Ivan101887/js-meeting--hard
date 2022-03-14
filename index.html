@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
       integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./styles/all.min.css">
+    <link rel="stylesheet" href="./styles/index.min.css">
     <script src="./js/main.js" defer></script>
   </head>
 
@@ -20,32 +20,51 @@
     <header class="header">
       <h1 class="header__tit text-center">農村地方美食小吃特色料理</h1>
     </header>
-    <main class="main container mx-auto">
-      <div class="toolBar">
-        <div class="form">
-          <select class="form__sel" name="cityFilter" id="City">
-            <option class="form__option" value="" selected disabled>請選擇行政區域...</option>
-          </select>
-          <select class="form__sel" name="townFilter" id="Town">
-            <option class="form__option" value="" selected disabled>請選擇鄉鎮區...</option>
-          </select>
+    <div class="primary container mx-auto d-flex">
+      <main class="main">
+        <div class="toolBar d-flex">
+          <div class="form">
+            <select class="form__sel" name="cityFilter" id="City">
+              <option class="form__option" value="" selected disabled>請選擇行政區域...</option>
+            </select>
+            <select class="form__sel" name="townFilter" id="Town">
+              <option class="form__option" value="" selected disabled>請選擇鄉鎮區...</option>
+            </select>
+          </div>
+          <div class="disMode">
+            檢視模式:
+            <button class="btn btn-cancel" type="button"><i class="fa fa-th-list"></i></button>
+            <button class="btn btn-cancel" type="button"><i class="fa fa-align-justify"></i></button>
+            <button class="btn btn-cancel" type="button"><i class="fa fa-th-large"></i></button>
+          </div>
         </div>
-        <div class="disMode">
-          檢視模式:
-          <button class="btn btn-cancel" type="button"><i class="fa fa-th-list"></i></button>
-          <button class="btn btn-cancel" type="button"><i class="fa fa-align-justify"></i></button>
-          <button class="btn btn-cancel" type="button"><i class="fa fa-th-large"></i></button>
-        </div>
-      </div>
-      <ul class="cardBox" id="CardBox">
-        <li></li>
-      </ul>
-    </main>
+        <ul class="cardBox" id="CardBox">
+          <li></li>
+        </ul>
+      </main>
+      <aside class="adv">
+          <figure class="adv__imgContainer">
+            <a href="javascript:;" class="adv__link">
+              <img src="./images/adv1.png" alt="" class="adv__img">
+            </a>
+          </figure>
+          <figure class="adv__imgContainer">
+            <a href="javascript:;" class="adv__link">
+              <img src="./images/adv2.png" alt="" class="adv__img">
+            </a>
+          </figure>
+          <figure class="adv__imgContainer sticky-top">
+            <a href="javascript:;" class="adv__link">
+              <img src="./images/adv3.png" alt="" class="adv__img">
+            </a>
+          </figure>
+      </aside>
+    </div>
     <footer class="footer">
       <div class="container mx-auto">
         <p class="footer__co">Cmoney全曜財金資訊</p>
         <p class="footer__resource">
-          資料來源: 
+          資料來源:
           <a href="https://data.gov.tw/dataset/6037" class="footer__link">政府資料開放平台</a>
         </p>
       </div>

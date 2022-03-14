@@ -102,6 +102,39 @@ html {
   }
 }
 
+.main {
+  width: 75%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.adv {
+  width: 25%;
+  padding-left: 15px;
+  padding-right: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.adv__imgContainer {
+  margin-bottom: 15px;
+}
+
+.adv__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.toolBar {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .form {
   width: 50%;
   border-radius: 1px;
@@ -141,7 +174,6 @@ html {
 
 .disMode {
   width: 25%;
-  display: inline-block;
   vertical-align: middle;
   text-align: right;
   color: #999;
@@ -211,6 +243,12 @@ html {
 
 .btn:hover {
   cursor: pointer;
+}
+
+.sticky-top {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 .text-center {
