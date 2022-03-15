@@ -47,7 +47,7 @@ function makeContentStr(arr, i, str = '') {
   arr[i].forEach((item, index) => {
     const desc = item.HostWords;
     str += `
-      <li class="restraunt table-tr ${index % 2 !== 0 ? 'js-bg__grey' : ''}">
+      <li class="restraunt table-tr ${index % 2 !== 0 ? 'js-bg__grey' : 'js-bg__white'}">
         <div class="restraunt__wrap d-flex">
           <figure class="restraunt__imgWrap">
             <img src=${item.PicURL} alt=${item.Name} class="restraunt__img" loading="lazy">
@@ -159,7 +159,6 @@ function filter(e, arr = []) {
 function clickBtn(e) {
   const self = e.target;
   const currentIndex = parseInt(self.dataset.index, 10);
-  if (currentIndex === modeIndex || currentIndex === btnIndex) return;
   switch (self.nodeName) {
     case 'I':
       elemModeBtn[modeIndex].classList.remove('js-btn');
