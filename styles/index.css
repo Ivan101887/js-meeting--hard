@@ -449,6 +449,10 @@ html {
           transform: scale(1.3);
 }
 
+.mode-list .restraunt__link {
+  color: #0CA4D3;
+}
+
 .mode-list .restraunt__img {
   -webkit-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;
@@ -578,4 +582,8 @@ html {
 
 .mode-tbl .restraunt__desc, .mode-tbl .restraunt__imgWrap {
   display: none;
+}
+
+.mode-tbl .restraunt__link {
+  color: #0CA4D3;
 }
