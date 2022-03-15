@@ -20,72 +20,281 @@
     <header class="header">
       <h1 class="header__tit text-center">農村地方美食小吃特色料理</h1>
     </header>
-    <div class="container mx-auto d-flex">
-      <main class="main">
-        <div class="toolBar d-flex">
-          <div class="form">
-            <select class="form__sel" name="cityFilter" id="City">
-              <option class="form__option" value="" selected disabled>請選擇行政區域...</option>
-            </select>
-            <select class="form__sel" name="townFilter" id="Town">
-              <option class="form__option" value="" selected disabled>請選擇鄉鎮區...</option>
-            </select>
-          </div>
-          <div class="disMode">
-            檢視模式:
-            <button class="btn btn-cancel" type="button"><i class="fa fa-th-list"></i></button>
-            <button class="btn btn-cancel" type="button"><i class="fa fa-align-justify"></i></button>
-            <button class="btn btn-cancel js-btn" type="button"><i class="fa fa-th-large"></i></button>
-          </div>
-        </div>
-        <ul class="cardBox type-tbl js-bg__white" id="Content">
-          <li class="card">
-            <div class="card__wrap d-flex">
-              <figure class="card__imgWrap">
-                <img src="./images/20151102115236.jpg" alt="" class="card__img" loading="lazy">
-              </figure>
-              <div class="card__content">
-                <h2 class="card__name">
-                  <a href="javascript:;" class="card__link" target="_blank">胡梅宴餐防</a>
-                </h2>
-                <p class="card__index">1</p>
-                <div class="card__dist">
-                  <p class="card__city">苗栗縣</p>
-                  <em class="card__town">大湖鄉</em>
-                </div>
-                <p class="card__desc">
-                  一看字體好好優質不詳研究所，優勢婦女市委進步還可以沒人我現在，堅決一座顯示很好精英願意文字可能肌膚不能長時間體系，竟然那個提升街道計算建築模樣更新好激動回頭神經，漢化我一形象的說看著，故事用途面議不。
-                </p>
-                <p class="card__address text-ellipsis"> 專用廣播之外圖片榮譽鏡頭僅供屏東現象，加工老婆那個，指數警察寵物每年即可相同形象，發現地方生意，女孩好好報名，大陸作家。</p>
-              </div>
+    <div class="container mx-auto">
+      <div class="outer d-flex">
+        <main class="main">
+          <div class="toolBar d-flex">
+            <div class="form">
+              <select class="form__sel" name="cityFilter" id="City">
+                <option class="form__option" value="" selected disabled>請選擇行政區域...</option>
+              </select>
+              <select class="form__sel" name="townFilter" id="Town">
+                <option class="form__option" value="" selected disabled>請選擇鄉鎮區...</option>
+              </select>
             </div>
-          </li>
-
-        </ul>
-      </main>
-      <aside class="adv">
-        <figure class="adv__imgContainer">
-          <a href="javascript:;" class="adv__link">
-            <img src="./images/adv1.png" alt="" class="adv__img">
-          </a>
-        </figure>
-        <figure class="adv__imgContainer">
-          <a href="javascript:;" class="adv__link">
-            <img src="./images/adv2.png" alt="" class="adv__img">
-          </a>
-        </figure>
-        <figure class="adv__imgContainer sticky-top">
-          <a href="javascript:;" class="adv__link">
-            <img src="./images/adv3.png" alt="" class="adv__img">
-          </a>
-        </figure>
-      </aside>
+            <div class="disMode">
+              檢視模式:
+              <button class="btn btn-cancel" type="button"><i class="fa fa-th-list"></i></button>
+              <button class="btn btn-cancel" type="button"><i class="fa fa-align-justify"></i></button>
+              <button class="btn btn-cancel js-btn" type="button"><i class="fa fa-th-large"></i></button>
+            </div>
+          </div>
+          <ul class="content table mode-list" id="Content">
+            <li class="restraunt table-tr js-bg__white">
+              <div class="restraunt__wrap d-flex">
+                <figure class="restraunt__imgWrap">
+                  <img src="./images/20151102115236.jpg" alt="" class="restraunt__img" loading="lazy">
+                </figure>
+                <div class="restraunt__content">
+                  <h2 class="restraunt__name table-td">
+                    <a href="javascript:;" class="restraunt__link" target="_blank">胡梅宴餐防</a>
+                  </h2>
+                  <div class="restraunt__dist">
+                    <p class="restraunt__index table-td">1</p>
+                    <p class="restraunt__city table-td">苗栗縣</p>
+                    <em class="restraunt__town table-td">大湖鄉</em>
+                  </div>
+                  <p class="restraunt__desc">
+                    一看字體好好優質不詳研究所，優勢婦女市委進步還可以沒人我現在，堅決一座顯示很好精英願意文字可能肌膚不能長時間體系，竟然那個提升街道計算建築模樣更新好激動回頭神經，漢化我一形象的說看著，故事用途面議不。
+                  </p>
+                  <p class="restraunt__address table-td text-ellipsis">加工老婆那個，發現地方生意，女孩好好報名，大陸作家。</p>
+                </div>
+              </div>
+            </li>
+            <li class="restraunt table-tr js-bg__white">
+              <div class="restraunt__wrap d-flex">
+                <figure class="restraunt__imgWrap">
+                  <img src="./images/20151102115236.jpg" alt="" class="restraunt__img" loading="lazy">
+                </figure>
+                <div class="restraunt__content">
+                  <h2 class="restraunt__name table-td">
+                    <a href="javascript:;" class="restraunt__link" target="_blank">胡梅宴餐防</a>
+                  </h2>
+                  <div class="restraunt__dist">
+                    <p class="restraunt__index table-td">1</p>
+                    <p class="restraunt__city table-td">苗栗縣</p>
+                    <em class="restraunt__town table-td">大湖鄉</em>
+                  </div>
+                  <p class="restraunt__desc">
+                    一看字體好好優質不詳研究所，優勢婦女市委進步還可以沒人我現在，堅決一座顯示很好精英願意文字可能肌膚不能長時間體系，竟然那個提升街道計算建築模樣更新好激動回頭神經，漢化我一形象的說看著，故事用途面議不。
+                  </p>
+                  <p class="restraunt__address table-td text-ellipsis">加工老婆那個，發現地方生意，女孩好好報名，大陸作家。</p>
+                </div>
+              </div>
+            </li>
+            <li class="restraunt table-tr js-bg__white">
+              <div class="restraunt__wrap d-flex">
+                <figure class="restraunt__imgWrap">
+                  <img src="./images/20151102115236.jpg" alt="" class="restraunt__img" loading="lazy">
+                </figure>
+                <div class="restraunt__content">
+                  <h2 class="restraunt__name table-td">
+                    <a href="javascript:;" class="restraunt__link" target="_blank">胡梅宴餐防</a>
+                  </h2>
+                  <div class="restraunt__dist">
+                    <p class="restraunt__index table-td">1</p>
+                    <p class="restraunt__city table-td">苗栗縣</p>
+                    <em class="restraunt__town table-td">大湖鄉</em>
+                  </div>
+                  <p class="restraunt__desc">
+                    一看字體好好優質不詳研究所，優勢婦女市委進步還可以沒人我現在，堅決一座顯示很好精英願意文字可能肌膚不能長時間體系，竟然那個提升街道計算建築模樣更新好激動回頭神經，漢化我一形象的說看著，故事用途面議不。
+                  </p>
+                  <p class="restraunt__address table-td text-ellipsis">加工老婆那個，發現地方生意，女孩好好報名，大陸作家。</p>
+                </div>
+              </div>
+            </li>
+            <li class="restraunt table-tr js-bg__white">
+              <div class="restraunt__wrap d-flex">
+                <figure class="restraunt__imgWrap">
+                  <img src="./images/20151102115236.jpg" alt="" class="restraunt__img" loading="lazy">
+                </figure>
+                <div class="restraunt__content">
+                  <h2 class="restraunt__name table-td">
+                    <a href="javascript:;" class="restraunt__link" target="_blank">胡梅宴餐防</a>
+                  </h2>
+                  <div class="restraunt__dist">
+                    <p class="restraunt__index table-td">1</p>
+                    <p class="restraunt__city table-td">苗栗縣</p>
+                    <em class="restraunt__town table-td">大湖鄉</em>
+                  </div>
+                  <p class="restraunt__desc">
+                    一看字體好好優質不詳研究所，優勢婦女市委進步還可以沒人我現在，堅決一座顯示很好精英願意文字可能肌膚不能長時間體系，竟然那個提升街道計算建築模樣更新好激動回頭神經，漢化我一形象的說看著，故事用途面議不。
+                  </p>
+                  <p class="restraunt__address table-td text-ellipsis">加工老婆那個，發現地方生意，女孩好好報名，大陸作家。</p>
+                </div>
+              </div>
+            </li>
+            <li class="restraunt table-tr js-bg__white">
+              <div class="restraunt__wrap d-flex">
+                <figure class="restraunt__imgWrap">
+                  <img src="./images/20151102115236.jpg" alt="" class="restraunt__img" loading="lazy">
+                </figure>
+                <div class="restraunt__content">
+                  <h2 class="restraunt__name table-td">
+                    <a href="javascript:;" class="restraunt__link" target="_blank">胡梅宴餐防</a>
+                  </h2>
+                  <div class="restraunt__dist">
+                    <p class="restraunt__index table-td">1</p>
+                    <p class="restraunt__city table-td">苗栗縣</p>
+                    <em class="restraunt__town table-td">大湖鄉</em>
+                  </div>
+                  <p class="restraunt__desc">
+                    一看字體好好優質不詳研究所，優勢婦女市委進步還可以沒人我現在，堅決一座顯示很好精英願意文字可能肌膚不能長時間體系，竟然那個提升街道計算建築模樣更新好激動回頭神經，漢化我一形象的說看著，故事用途面議不。
+                  </p>
+                  <p class="restraunt__address table-td text-ellipsis">加工老婆那個，發現地方生意，女孩好好報名，大陸作家。</p>
+                </div>
+              </div>
+            </li>
+            <li class="restraunt table-tr js-bg__white">
+              <div class="restraunt__wrap d-flex">
+                <figure class="restraunt__imgWrap">
+                  <img src="./images/20151102115236.jpg" alt="" class="restraunt__img" loading="lazy">
+                </figure>
+                <div class="restraunt__content">
+                  <h2 class="restraunt__name table-td">
+                    <a href="javascript:;" class="restraunt__link" target="_blank">胡梅宴餐防</a>
+                  </h2>
+                  <div class="restraunt__dist">
+                    <p class="restraunt__index table-td">1</p>
+                    <p class="restraunt__city table-td">苗栗縣</p>
+                    <em class="restraunt__town table-td">大湖鄉</em>
+                  </div>
+                  <p class="restraunt__desc">
+                    一看字體好好優質不詳研究所，優勢婦女市委進步還可以沒人我現在，堅決一座顯示很好精英願意文字可能肌膚不能長時間體系，竟然那個提升街道計算建築模樣更新好激動回頭神經，漢化我一形象的說看著，故事用途面議不。
+                  </p>
+                  <p class="restraunt__address table-td text-ellipsis">加工老婆那個，發現地方生意，女孩好好報名，大陸作家。</p>
+                </div>
+              </div>
+            </li>
+            <li class="restraunt table-tr js-bg__white">
+              <div class="restraunt__wrap d-flex">
+                <figure class="restraunt__imgWrap">
+                  <img src="./images/20151102115236.jpg" alt="" class="restraunt__img" loading="lazy">
+                </figure>
+                <div class="restraunt__content">
+                  <h2 class="restraunt__name table-td">
+                    <a href="javascript:;" class="restraunt__link" target="_blank">胡梅宴餐防</a>
+                  </h2>
+                  <div class="restraunt__dist">
+                    <p class="restraunt__index table-td">1</p>
+                    <p class="restraunt__city table-td">苗栗縣</p>
+                    <em class="restraunt__town table-td">大湖鄉</em>
+                  </div>
+                  <p class="restraunt__desc">
+                    一看字體好好優質不詳研究所，優勢婦女市委進步還可以沒人我現在，堅決一座顯示很好精英願意文字可能肌膚不能長時間體系，竟然那個提升街道計算建築模樣更新好激動回頭神經，漢化我一形象的說看著，故事用途面議不。
+                  </p>
+                  <p class="restraunt__address table-td text-ellipsis">加工老婆那個，發現地方生意，女孩好好報名，大陸作家。</p>
+                </div>
+              </div>
+            </li>
+            <li class="restraunt table-tr js-bg__white">
+              <div class="restraunt__wrap d-flex">
+                <figure class="restraunt__imgWrap">
+                  <img src="./images/20151102115236.jpg" alt="" class="restraunt__img" loading="lazy">
+                </figure>
+                <div class="restraunt__content">
+                  <h2 class="restraunt__name table-td">
+                    <a href="javascript:;" class="restraunt__link" target="_blank">胡梅宴餐防</a>
+                  </h2>
+                  <div class="restraunt__dist">
+                    <p class="restraunt__index table-td">1</p>
+                    <p class="restraunt__city table-td">苗栗縣</p>
+                    <em class="restraunt__town table-td">大湖鄉</em>
+                  </div>
+                  <p class="restraunt__desc">
+                    一看字體好好優質不詳研究所，優勢婦女市委進步還可以沒人我現在，堅決一座顯示很好精英願意文字可能肌膚不能長時間體系，竟然那個提升街道計算建築模樣更新好激動回頭神經，漢化我一形象的說看著，故事用途面議不。
+                  </p>
+                  <p class="restraunt__address table-td text-ellipsis">加工老婆那個，發現地方生意，女孩好好報名，大陸作家。</p>
+                </div>
+              </div>
+            </li>
+            <li class="restraunt table-tr js-bg__white">
+              <div class="restraunt__wrap d-flex">
+                <figure class="restraunt__imgWrap">
+                  <img src="./images/20151102115236.jpg" alt="" class="restraunt__img" loading="lazy">
+                </figure>
+                <div class="restraunt__content">
+                  <h2 class="restraunt__name table-td">
+                    <a href="javascript:;" class="restraunt__link" target="_blank">胡梅宴餐防</a>
+                  </h2>
+                  <div class="restraunt__dist">
+                    <p class="restraunt__index table-td">1</p>
+                    <p class="restraunt__city table-td">苗栗縣</p>
+                    <em class="restraunt__town table-td">大湖鄉</em>
+                  </div>
+                  <p class="restraunt__desc">
+                    一看字體好好優質不詳研究所，優勢婦女市委進步還可以沒人我現在，堅決一座顯示很好精英願意文字可能肌膚不能長時間體系，竟然那個提升街道計算建築模樣更新好激動回頭神經，漢化我一形象的說看著，故事用途面議不。
+                  </p>
+                  <p class="restraunt__address table-td text-ellipsis">加工老婆那個，發現地方生意，女孩好好報名，大陸作家。</p>
+                </div>
+              </div>
+            </li>
+            <li class="restraunt table-tr js-bg__white">
+              <div class="restraunt__wrap d-flex">
+                <figure class="restraunt__imgWrap">
+                  <img src="./images/20151102115236.jpg" alt="" class="restraunt__img" loading="lazy">
+                </figure>
+                <div class="restraunt__content">
+                  <h2 class="restraunt__name table-td">
+                    <a href="javascript:;" class="restraunt__link" target="_blank">胡梅宴餐防</a>
+                  </h2>
+                  <div class="restraunt__dist">
+                    <p class="restraunt__index table-td">1</p>
+                    <p class="restraunt__city table-td">苗栗縣</p>
+                    <em class="restraunt__town table-td">大湖鄉</em>
+                  </div>
+                  <p class="restraunt__desc">
+                    一看字體好好優質不詳研究所，優勢婦女市委進步還可以沒人我現在，堅決一座顯示很好精英願意文字可能肌膚不能長時間體系，竟然那個提升街道計算建築模樣更新好激動回頭神經，漢化我一形象的說看著，故事用途面議不。
+                  </p>
+                  <p class="restraunt__address table-td text-ellipsis">加工老婆那個，發現地方生意，女孩好好報名，大陸作家。</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="pagination d-flex">
+            <div class="pageInfo">
+              <span class="pageInfo__text">美食頁次1/12</span>
+            </div>
+            <div class="pageBar">
+              <button type="button" class="pageBar__button btn btn-light btn-sm" data-index="1">1</button>
+              <button type="button" class="pageBar__button btn btn-light btn-sm" data-index="1">1</button>
+              <button type="button" class="pageBar__button btn btn-light btn-sm" data-index="1">1</button>
+              <button type="button" class="pageBar__button btn btn-light btn-sm" data-index="1">1</button>
+              <button type="button" class="pageBar__button btn btn-light btn-sm" data-index="1">1</button>
+              <button type="button" class="pageBar__button btn btn-light btn-sm" data-index="1">1</button>
+              <button type="button" class="pageBar__button btn btn-light btn-sm" data-index="1">1</button>
+              <button type="button" class="pageBar__button btn btn-light btn-sm" data-index="1">1</button>
+              <button type="button" class="pageBar__button btn btn-light btn-sm" data-index="1">1</button>
+              <button type="button" class="pageBar__button btn btn-light btn-sm" data-index="1">1</button>
+              <button type="button" class="pageBar__button btn btn-light btn-sm" data-index="1">1</button>
+            </div>
+          </div>
+        </main>
+        <aside class="adv">
+          <figure class="adv__imgContainer">
+            <a href="javascript:;" class="adv__link">
+              <img src="./images/adv1.png" alt="" class="adv__img">
+            </a>
+          </figure>
+          <figure class="adv__imgContainer">
+            <a href="javascript:;" class="adv__link">
+              <img src="./images/adv2.png" alt="" class="adv__img">
+            </a>
+          </figure>
+          <figure class="adv__imgContainer sticky-top">
+            <a href="javascript:;" class="adv__link">
+              <img src="./images/adv3.png" alt="" class="adv__img">
+            </a>
+          </figure>
+        </aside>
+      </div>
     </div>
     <footer class="footer">
       <div class="container mx-auto">
         <h3 class="footer__co">Cmoney全曜財金資訊</h3>
         <blockquote>
-          <p class="footer__resource">資料來源:<a href="https://data.gov.tw/dataset/6037" class="footer__link">政府資料開放平台</a>
+          <p class="footer__resource">
+            資料來源:<a href="https://data.gov.tw/dataset/6037" class="footer__link">政府資料開放平台</a>
           </p>
         </blockquote>
       </div>
