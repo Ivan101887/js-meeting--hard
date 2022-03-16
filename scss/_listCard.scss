@@ -26,6 +26,9 @@
           .restraunt {
             &__imgWrap {
               transform:scale(1.3);
+              &::after {
+                opacity: 0;
+              }
             }
             &__content {
               bottom: 12px;
@@ -37,6 +40,9 @@
         width: 100%;
         height: 200px;
         transition: all .5s ease-in;
+        &::after {
+          transition: all .5s ease-in;
+        }
       }
       &__dist {
         position: absolute;

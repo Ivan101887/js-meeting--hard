@@ -1,11 +1,23 @@
 <template class="template">
   <table class="contentTbl">
-    <tr class="contentTbl__tr">
-      <th class="contentTbl__th">編號</th>
-      <th class="contentTbl__th">行政區域</th>
-      <th class="contentTbl__th">鄉鎮區</th>
-      <th class="contentTbl__th">商家</th>
-      <th class="contentTbl__th">地址</th>
-    </tr>
+    <thead class="contentTbl__head">
+      <tr class="contentTbl__tr">
+        <th class="contentTbl__th cell-sm">編號</th>
+        <th class="contentTbl__th cell-md">行政區域</th>
+        <th class="contentTbl__th cell-md">鄉鎮區</th>
+        <th class="contentTbl__th cell-lg">商家</th>
+        <th class="contentTbl__th cell-xl">地址</th>
+      </tr>
+    </thead>
+    <tbody class="contentTbl__tbody">
+      <tr class="contentTbl__tr">
+        <td class="contentTbl__td contentTbl__index">{{index}}</td>
+        <td class="contentTbl__td">{{city}}</td>
+        <td class="contentTbl__td">{{town}}</td>
+        <td class="contentTbl__td">{{name}}</td>
+        <td class="contentTbl__td">{{address}}</td>
+      </tr>
+    </tbody>
+
   </table>
 </template>

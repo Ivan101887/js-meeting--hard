@@ -86,8 +86,6 @@ html {
 .main {
   width: 75%;
   padding: 15px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 @media screen and (max-width: 414px) {
@@ -390,7 +388,6 @@ html {
   background-color: #fff;
 }
 
-/*--- lyt ---*/
 .mode-card {
   margin-left: -15px;
   margin-right: -15px;
@@ -428,6 +425,10 @@ html {
           transform: scale(1.3);
 }
 
+.mode-card .restraunt__wrap:hover .restraunt__imgWrap::after {
+  opacity: 0;
+}
+
 .mode-card .restraunt__wrap:hover .restraunt__content {
   bottom: 12px;
 }
@@ -435,6 +436,11 @@ html {
 .mode-card .restraunt__imgWrap {
   width: 100%;
   height: 200px;
+  -webkit-transition: all .5s ease-in;
+  transition: all .5s ease-in;
+}
+
+.mode-card .restraunt__imgWrap::after {
   -webkit-transition: all .5s ease-in;
   transition: all .5s ease-in;
 }
@@ -641,4 +647,50 @@ html {
 
 .mode-list .restraunt__address, .mode-list .restraunt__index {
   display: none;
+}
+
+.spot {
+  overflow: auto;
+}
+
+.contentTbl {
+  width: 900px;
+  margin-right: 0;
+  margin-bottom: 10px;
+  padding-right: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.contentTbl__td, .contentTbl__th {
+  vertical-align: center;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  border: 1px solid #ddd;
+  margin-right: -1px;
+  margin-bottom: -1px;
+}
+
+.contentTbl__th {
+  border-bottom-width: 2px;
+}
+
+.contentTbl__index {
+  text-align: right;
+}
+
+.cell-sm {
+  width: 7.2%;
+}
+
+.cell-md {
+  width: 10.4%;
+}
+
+.cell-lg {
+  width: 29%;
+}
+
+.cell-xl {
+  width: 42%;
 }

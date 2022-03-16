@@ -35,7 +35,7 @@ async function getData() {
 }
 
 function render() {
-  elemContent.innerHTML = makeContentStr(processedData, 0);
+  // elemContent.innerHTML = makeContentStr(processedData, 0);
   elemPageBar.innerHTML = makeBtnStr(data.length);
   elemPageInfo.innerHTML = makePageInfo(btnIndex);
   elemPageBtn[btnIndex].classList.add('js-pageBtn');
@@ -47,31 +47,34 @@ function makeContentStr(arr, i, str = '') {
   arr[i].forEach((item, index) => {
     const desc = item.HostWords;
     str += `
-      <li class="restraunt table-tr ${index % 2 !== 0 ? 'js-bg__grey' : 'js-bg__white'}">
+      <li class="restraunt ${index % 2 !== 0 ? 'js-bg__grey' : 'js-bg__white'}">
         <div class="restraunt__wrap d-flex">
           <figure class="restraunt__imgWrap">
             <img src=${item.PicURL} alt=${item.Name} class="restraunt__img" loading="lazy">
           </figure>
           <div class="restraunt__content">
-            <h2 class="restraunt__name table-td">
+            <h2 class="restraunt__name">
               ${item.Url === '' ? '' : `<a href=${item.Url} class="restraunt__link" target="_blank">`}
                 ${item.Name}
               ${item.Url === '' ? '' : '</a>'}
             </h2>
             <div class="restraunt__dist">
-              <p class="restraunt__index table-td">${perPage * btnIndex + index + 1}</p>
-              <p class="restraunt__city table-td">${item.City}</p>
-              <em class="restraunt__town table-td">${item.Town}</em>
+              <p class="restraunt__index">${perPage * btnIndex + index + 1}</p>
+              <p class="restraunt__city">${item.City}</p>
+              <em class="restraunt__town">${item.Town}</em>
             </div>
             <p class="restraunt__desc">
               ${isPc ? sliceStr(desc, 100) : slice(desc, 40)}
             </p>
-            <p class="restraunt__address table-td text-ellipsis">${item.Address}</p>
+            <p class="restraunt__address text-ellipsis">${item.Address}</p>
           </div>
         </div>
       </li>`
   })
   return str;
+}
+function makeTbl(arr, i, str = '') {
+
 }
 // 處理資料--分頁資料分段
 function setData(target) {

@@ -41,8 +41,29 @@
                   data-index="2"></i></button>
             </div>
           </div>
-          <div class="spot">
-            <ul class="content table  mode-list" id="Content"></ul>
+          <div class="spot" id="Spot">
+            <!-- <ul class="content table mode-list" id="Content"></ul> -->
+            <table class="contentTbl">
+              <thead>
+                <tr class="contentTbl__tr">
+                  <th class="contentTbl__th cell-sm">編號</th>
+                  <th class="contentTbl__th cell-md">行政區域</th>
+                  <th class="contentTbl__th cell-md">鄉鎮區</th>
+                  <th class="contentTbl__th cell-lg">商家</th>
+                  <th class="contentTbl__th">地址</th>
+                </tr>
+              </thead>
+              <tbody class="contentTbl">
+                <tr class="contentTbl__tr">
+                  <td class="contentTbl__td">{{index}}</td>
+                  <td class="contentTbl__td">{{city}}</td>
+                  <td class="contentTbl__td">{{town}}</td>
+                  <td class="contentTbl__td">{{name}}</td>
+                  <td class="contentTbl__td">{{address}}</td>
+                </tr>
+              </tbody>
+            
+            </table>
           </div>
           <div class="pagination d-flex">
             <div class="pageInfo" id="PageInfo"></div>
@@ -62,7 +83,7 @@
         </blockquote>
       </div>
     </footer>
-    <div class="loader" id="Loading">
+    <div class="loader js-loader" id="Loading">
       <img src="./images/load.gif" alt="loading gif" class="loader__img mx-auto" width="200" height="200">
     </div>
   </body>

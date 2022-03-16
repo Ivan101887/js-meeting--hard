@@ -1,0 +1,48 @@
+.spot {
+  overflow: auto;
+}
+.contentTbl {
+  width:900px;
+  margin: {
+    right: 0;
+    bottom: 10px;
+  }
+  padding: {
+    right: 15px;
+  }
+  box-sizing: border-box;
+  &__td, &__th {
+    vertical-align: center;
+    padding: {
+      top: 18px;
+      bottom: 18px;
+    }
+    border: 1px solid #ddd;
+    margin: {
+      right: -1px;
+      bottom: -1px;
+    }
+  }
+  &__th {
+    border-bottom: {
+      width: 2px;
+    }
+  }
+  &__index {
+    text-align: right;
+  }
+}
+.cell {
+  &-sm {
+    width: 7.2%;
+  }
+  &-md {
+    width: 10.4%;
+  }
+  &-lg {
+    width: 29%;
+  }
+  &-xl {
+    width: 42%;
+  }
+}
