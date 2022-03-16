@@ -114,7 +114,6 @@ function makePageInfo(i, str = '') {
   return str;
 }
 function setEvent() {
-  // window.addEventListener('resize', () => console.log(isPc));
   elemTown.addEventListener('change', filter);
   elemCity.addEventListener('change', filter);
   elemPageBar.addEventListener('click', clickBtn);

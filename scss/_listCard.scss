@@ -1,0 +1,320 @@
+.mode {
+  &-card {
+    margin: {
+      left: -15px;
+      right: -15px;
+      top: -15px;
+    }
+    display: flex;
+    flex: {
+      wrap: wrap;
+    }
+    .restraunt {
+      width: 50%;
+      @include pad {
+        width: 100%;
+      }
+      padding: 15px;
+      background: {
+        color: transparent;
+      }
+      justify-content: space-between;
+      box-sizing: border-box;
+      &__wrap {
+        overflow: hidden;
+        &:hover {
+          .restraunt {
+            &__imgWrap {
+              transform:scale(1.3);
+            }
+            &__content {
+              bottom: 12px;
+            }
+          }
+        }
+      }
+      &__imgWrap {
+        width: 100%;
+        height: 200px;
+        transition: all .5s ease-in;
+      }
+      &__dist {
+        position: absolute;
+        top: -30px;
+        margin: {
+          bottom: 5px; 
+        }
+      }
+      &__city {
+        display: inline-block;
+      }
+      &__content {
+        position: absolute;
+        bottom: -52px;
+        color: #fff;
+        max-width: 100%;
+        padding: {
+          left: 12px;
+        }
+        transition: all .5s ease-in;
+      }
+      &__town {
+        opacity: .6;
+        display: inline-block;
+        font: {
+          size: 13px;
+          style: italic;
+        }
+        vertical-align: middle;
+      }
+      &__name {
+        font: {
+          weight: 400;
+        }
+        &::after {
+          content: "";
+          display: block;
+          width: 48px;
+          margin: {
+            top: 10px;
+            bottom: 10px;
+          }
+          border: {
+            top: 2px solid #fff;
+            bottom: 2px solid #fff;
+          }
+        }
+      }
+      &__desc {
+        font: {
+          size: 15px;
+        }
+        height: 38px;
+        overflow: hidden;
+        line-height: 1.35em;
+      }
+      &__address, &__index {
+        display: none;
+      }
+    }
+  }
+  &-list {
+    .restraunt {
+      width: 100%;
+      background: {
+        color: transparent;
+      }
+      &__wrap {
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        margin: {
+          bottom: 15px;
+        };
+        background-color: #fff;
+        @include phone {
+          flex: {
+            direction: column;
+          }
+        }
+      }
+      &__imgWrap {
+        position: relative;
+        overflow: hidden;
+        width: 28%;
+        @include phone {
+          width: 100%;
+        }
+        height: 160px;
+        margin: {
+          right: 15px;
+        }
+        flex: {
+          shrink: 0;
+        }
+        &::after {
+          transition: all 0.5s ease-in-out;
+        }
+        &:hover {
+          &::after {
+            opacity: 0;
+          }
+          .restraunt {
+            &__img {
+              transform: scale(1.3);
+            }
+          }
+        }
+      }
+      &__link {
+        color: #0CA4D3;
+      }
+      &__img {
+        transition: all 0.5s ease-in;
+      }
+      &__dist {
+        position: absolute;
+        width: fit-content;
+        top: 0;
+        left: -50px;
+        text-align: right;
+        @include phone {
+          position: static;
+          text: {
+            align: left;
+          }
+        }
+      }
+      &__city {
+        margin: {
+          bottom: 10px;
+        }
+        @include phone {
+          display: inline-block;
+        }
+      }
+      &__town {
+        writing-mode: vertical-rl;
+        padding: {
+          right: 12px;
+        }
+        letter-spacing: 0.4em;
+        font: {
+          weight: 600;
+        }
+        color: #666;
+        @include phone {
+          writing-mode: horizontal-tb;
+          letter-spacing: 0;
+        }
+      }
+      &__content {
+        margin-left: 15px;
+        color: #000;
+        @include phone() {
+          margin: {
+            left: 0;
+          }
+          
+        }
+      }
+      &__name {
+        font: {
+          size: 1.85rem;
+          weight: 600;
+        }
+        margin: {
+          bottom: 20px; 
+        }
+        @include phone {
+          margin: {
+            top: 15px;
+            bottom: 15px;
+          }
+        }
+      }
+      &__desc {
+        font: {
+          size: 15px;
+        }
+        line-height: 1.7em;
+        @include phone {
+          display: -webkit-box;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: normal; 
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+        }
+      }
+      &__address, &__index {
+        display: none;
+      }
+    }
+  }
+  // &-tbl {
+  //   .table {
+  //     width: 100%;
+  //     display: table;
+  //     &-tr {
+  //       display: table-row;
+  //       &:hover {
+  //         background: {
+  //           color: #EFF4F7;
+  //         }
+  //       }
+  //     }
+  //     &-td {
+  //       display: table-cell;
+  //       border: 1px solid #d9d9d9;
+  //       padding: 18px 15px;
+  //       margin: {
+  //         bottom: -1px;
+  //         right: -1px;
+  //       }
+  //       white-space: nowrap;
+  //     }
+  //   }
+    
+  //   margin: {
+  //     bottom: 10px;
+  //   }
+  //   .restraunt {
+  //     display: table-row;
+  //     &__wrap {
+  //       & > * {
+  //         flex:1 1 auto
+  //       }
+  //     }
+  //     font: {
+  //       size: 1rem;
+  //     }
+  //     &__content {
+  //       display: flex;
+  //     }
+  //     &__dist {
+  //       display: flex;
+  //       width: 28.5%;
+  //       color: #666;
+  //       box-sizing: border-box;
+  //     }
+  //     &__name {
+  //       width: 28%;
+  //       order: 1;
+  //     }
+  //     &__index {
+  //       width: 8%;
+  //       text-align: right;
+  //       width: 20%;
+  //     }
+  //     &__city {
+  //       width: 40%;
+  //     }
+  //     &__town {
+  //       width: 40%;
+  //     }
+  //     &__city, &__town, &__index {
+  //       flex: 1 1 auto;
+  //       color: inherit;
+  //     }
+  //     &__city {
+  //       font: {
+  //         size: 16px;
+  //       }
+  //       background: {
+  //         color: transparent;
+  //       }
+  //       box-sizing: border-box;
+  //     }
+  //     &__address {
+  //       width: 42%;
+  //       order: 2;
+  //     }
+  //     &__desc, &__imgWrap {
+  //       display: none;
+  //     }
+  //     &__link {
+  //       color: #0CA4D3;
+  //     }
+  //   }
+  // }
+}

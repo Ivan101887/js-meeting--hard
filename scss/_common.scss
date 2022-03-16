@@ -1,0 +1,367 @@
+@mixin pc {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin pad {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin phone {
+  @media screen and (max-width: 414px) {
+    @content;
+  } 
+}
+
+
+html {
+  font: {
+    size: 16px;
+    family: "Arial", "Helvetica", "微軟正黑體", "sans-serif";
+  }
+  background: {
+    color: #eee;
+  }
+}
+
+/* --- layout --- */
+.header {
+  padding: {
+    top: 32px;
+    bottom: 35px;
+  }
+  @include phone {
+    padding: {
+      top: 22px;
+      bottom: 12px;
+    }
+  }
+  &__tit {
+    font: {
+      size: 2rem;
+      weight: 600;
+    }
+    @include phone() {
+      font: {
+        size: 25px;
+      }
+    }
+  }
+}
+.main {
+  width: 75%;
+  padding: 15px;  
+  @include phone {
+    width: 100%;
+  }
+  box-sizing: border-box;
+}
+.adv {
+  width: 25%;
+  padding: {
+    left: 15px;
+    right: 15px;
+  }
+  margin: {
+    right: -20px;
+  }
+  &__imgContainer {
+    margin: {
+      bottom: 15px;
+    }
+  }
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  box-sizing: border-box;
+  @include pad {
+    padding: {
+      left: 0;
+    }
+  }
+  @include phone {
+    display: none;
+  }
+}
+.pagination {
+  align-items: center;
+  justify-content: space-between;
+}
+.footer {
+  background: {
+    color: #999;
+  }
+  color: #ccc;
+  padding: {
+    top: 20px;
+    bottom: 20px;
+    left: 15px;
+  }
+  
+  @include phone {
+    text: {
+      align: center;
+    }
+  }
+  &__co {
+    font: {
+      size: 20px;
+      weight: 600;
+    }
+    margin: {
+      bottom: 5px;
+    }
+  }
+  &__resource {
+    font: {
+      size: 14px;
+    }
+  }
+  &__link {
+    color: #fff;
+    text: {
+      decoration: none;
+    }
+  }
+}
+/* --- module ---*/ 
+.toolBar {
+  flex: {
+    wrap: wrap;
+  }
+  align-items: center;
+  margin: {
+    bottom: 15px;
+  }
+  @include phone{
+    justify-content: center;
+  }
+}
+.form {
+  width: 50%;
+  @include pad {
+    width: 100%;
+  }
+  
+  border: {
+    radius: 1px;
+  }
+  &__sel {
+    @include pad {
+      width: 100%;
+      margin: {
+        bottom: 15px;
+      }
+    }
+    border: {
+      radius: 5px;
+      width: 0;
+    }
+    font: {
+      size: 15px;
+    }
+    appearance: none;
+    background: {
+      image : url('../images/down-arrow.png');
+      repeat: no-repeat;
+      size: 6px 12px;
+      position: 95% 50%;
+      color: #ddd;
+    }
+    padding: 10px 30px 10px 15px;
+    margin: {
+      right: 5px;
+    }
+  }
+  &__option {
+    background: {
+      color: #fff;
+    }
+  }
+}
+.disMode {
+  width: 50%;
+  @include pad {
+    width: 100%;
+    text: {
+      align: center;
+    }
+  }
+  text: {
+    align: right;
+  }
+  color: #999;
+  font: {
+    weight: 600;
+  }
+}
+.restraunt {
+  &__wrap {
+    position: relative;
+  }
+  &__imgWrap {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: {
+        image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,.3) 70%,rgba(0,0,0,.8) 100%);
+      }
+      opacity: 1;
+    }
+  }
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
+  }
+  &__link {
+    text: {
+      decoration: none;
+    }
+    color: inherit;
+  }
+  &__city {
+    font: {
+      size: 0.84em;
+    }
+    color: #fff;
+    padding: 5px;
+    background: {
+      color: #02A0D2;
+    }
+  }
+  box-sizing: border-box;
+}
+.pageInfo {
+  @include phone {
+    display: none;
+  }
+}
+.loader {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: {
+    color: rgba(0, 0, 0, 0.7);
+  }
+  &__img {
+    margin: {
+      top: 45vh;
+    }
+    display: block;
+  }
+}
+/* --- helper --- */ 
+.container {
+  max-width: 1200px;
+  @include phone{
+    width: 100%;
+  }
+}
+.mx {
+  &-auto {
+    margin: {
+      right: auto;
+      left: auto;
+    }
+  }
+}
+.d {
+  &-flex {
+    display: flex;
+  }
+}
+.btn {
+  border: {
+    width: 0;
+  }
+  background: {
+    color: transparent;
+  }
+  font: {
+    size: 20px;
+  }
+  vertical-align: middle;
+  &-sm {
+    font: {
+      size: 12px;
+    }
+    padding: 8px 12px;
+    margin: {
+      right: 7px;
+    }
+    @include phone {
+      margin: {
+        bottom: 7px;
+      }
+    }
+  }
+  &-light {
+    color: #999;
+    background: {
+      color: #ddd;
+    }
+  }
+  &-cancel {
+    color: #666;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+.sticky {
+  &-top {
+    position: sticky;
+    top: 0;
+  }
+}
+.text {
+  &-center {
+    text-align: center;
+  }
+  &-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+.border {
+  &-round {
+    border-radius: 3px;
+  }
+}
+.js {
+  &-loader {
+    display: none;
+  }
+  &-pageBtn {
+    background: {
+      color: #0CA4D3;
+    }
+    color: #fff;
+  }
+  &-btn {
+    color: #000;
+  }
+  &-bg {
+    &__grey {
+      background: {
+        color: #f9f9f9;
+      }
+    }
+    &__white {
+      background: {
+        color: #fff;
+      }
+    }
+  }
+}
