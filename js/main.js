@@ -90,7 +90,7 @@ function makeTblStr(arr, i) {
       <tbody class="contentTbl__tbody">`
   arr[i].forEach((item, index) => {
     str += `
-			<tr class="spotTable__tr${index % 2 !== 0 ? ' js-bg__grey' : 'js-bg__white'}">
+			<tr class="${index % 2 !== 0 ? 'js-bg__grey' : 'js-bg__white'} contentTbl__tr">
 				<td class="contentTbl__td text-right text-cancel">${perPage * btnIndex + index + 1}</td>
 				<td class="contentTbl__td text-cancel">${item.City}</td>
         <td class="contentTbl__td text-cancel">${item.Town}</td>
@@ -147,8 +147,8 @@ function makePageInfo(i, str = '') {
 function setEvent() {
   elemTown.addEventListener('change', filter);
   elemCity.addEventListener('change', filter);
-  elemPageBar.addEventListener('click', clickBtn);
-  elemDisMode.addEventListener('click', clickBtn);
+  elemPageBar.addEventListener('click', switchPage);
+  elemDisMode.addEventListener('click', changeMode);
 }
 // 新增選單選項
 function setOption(type, city, allArr = [], str = '') {
@@ -177,53 +177,50 @@ function filter(e, arr = []) {
   }
   else { arr = data.filter((item) => item.Town === val); }
   processedData = setData(arr);
-  console.log(processedData);
   elemPageBtn[btnIndex].classList.remove('js-pageBtn');
   btnIndex = 0;
   elemPageBar.innerHTML = makeBtnStr(processedData.length * perPage);
   elemPageInfo.innerHTML = makePageInfo(btnIndex);
   elemPageBtn[btnIndex].classList.add('js-pageBtn');
-  elemSpot.innerHTML = modeIndex === 2 ? makeTblStr(processedData, btnIndex) : makeContentStr(processedData, btnIndex);
+  elemSpot.innerHTML = modeIndex === 1 ? makeTblStr(processedData, btnIndex) : makeContentStr(processedData, btnIndex);
+  let elemContent = elemSpot.querySelector('#Content');
+  if (elemContent) { elemContent.classList.add(modeArr[modeIndex]) }
 }
 
-function clickBtn(e) {
+function changeMode(e) {
   const self = e.target;
   const currentIndex = parseInt(self.dataset.index, 10);
-  switch (self.nodeName) {
-    case 'I':
-      elemModeBtn[modeIndex].classList.remove('js-btn');
-      elemModeBtn[currentIndex].classList.add('js-btn');
-      if (modeIndex !== 1 && currentIndex === 1) {
-        elemSpot.style.overflow = 'auto';
-        elemSpot.innerHTML = makeTblStr(processedData, btnIndex);
-        modeIndex = currentIndex;
-      }
-      else if (modeIndex === 1) {
-        elemSpot.style.overflow = 'visible';
-        elemSpot.innerHTML = makeContentStr(processedData, btnIndex);
-        elemSpot.querySelector('#Content').classList.add(modeArr[currentIndex]);
-        modeIndex = currentIndex;
-      } else {
-        elemSpot.style.overflow = 'visible';
-        let elemContent = elemSpot.querySelector('#Content');
-        elemContent.classList.remove(modeArr[modeIndex]);
-        elemContent.classList.add(modeArr[currentIndex]);
-      }
-      modeIndex = currentIndex;
-      return;
-    case 'BUTTON':
-      elemPageBtn[btnIndex].classList.remove('js-pageBtn');
-      self.classList.add('js-pageBtn');
-      btnIndex = currentIndex;
-      elemPageInfo.innerHTML = makePageInfo(btnIndex);
-      elemSpot.innerHTML = modeIndex === 1 ? makeTblStr(processedData, btnIndex) : makeContentStr(processedData, btnIndex);
-      let elemContent = elemSpot.querySelector('#Content');
-      if (elemContent) {
-        elemContent.classList.add(modeArr[modeIndex]);
-      }
-      return;
-    default:
-      return;
+  if(self.nodeName !== 'I' || currentIndex === modeIndex) return
+  elemModeBtn[modeIndex].classList.remove('js-btn');
+  elemModeBtn[currentIndex].classList.add('js-btn');
+  if (modeIndex !== 1 && currentIndex === 1) {
+    elemSpot.style.overflow = 'auto';
+    elemSpot.innerHTML = makeTblStr(processedData, btnIndex);
   }
-
+  else if (modeIndex === 1) {
+    elemSpot.style.overflow = 'visible';
+    elemSpot.innerHTML = makeContentStr(processedData, btnIndex);
+    elemSpot.querySelector('#Content').classList.add(modeArr[currentIndex]);
+  } else {
+    elemSpot.style.overflow = 'visible';
+    let elemContent = elemSpot.querySelector('#Content');
+    elemContent.classList.remove(modeArr[modeIndex]);
+    elemContent.classList.add(modeArr[currentIndex]);
+  }
+  modeIndex = currentIndex;
+}
+function switchPage(e) {
+  const self = e.target;
+  const currentIndex = parseInt(self.dataset.index, 10);
+  if (self.nodeName !== 'BUTTON' || currentIndex === btnIndex) return
+  elemPageBtn[btnIndex].classList.remove('js-pageBtn');
+  self.classList.add('js-pageBtn');
+  btnIndex = currentIndex;
+  elemPageInfo.innerHTML = makePageInfo(btnIndex);
+  elemSpot.innerHTML = modeIndex === 1 ? makeTblStr(processedData, btnIndex) : makeContentStr(processedData, btnIndex);
+  let elemContent = elemSpot.querySelector('#Content');
+  if (elemContent) {
+    elemContent.classList.add(modeArr[modeIndex]);
+  }
+  return;
 }

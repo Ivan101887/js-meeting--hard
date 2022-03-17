@@ -61,6 +61,7 @@ html {
 
 /* --- layout --- */
 .header {
+  width: 100%;
   padding-top: 32px;
   padding-bottom: 35px;
 }
@@ -85,7 +86,7 @@ html {
 
 .main {
   width: 75%;
-  padding: 15px;
+  padding: 15px 15px 15px 15px;
 }
 
 @media screen and (max-width: 414px) {
@@ -98,6 +99,16 @@ html {
 @media screen and (max-width: 320px) {
   .main {
     padding: 5px;
+  }
+}
+
+.spot {
+  padding-left: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .spot {
+    padding-left: 0;
   }
 }
 
@@ -138,6 +149,7 @@ html {
 }
 
 .footer {
+  width: calc(100% - 15px);
   background-color: #999;
   color: #ccc;
   padding-top: 20px;
@@ -148,7 +160,6 @@ html {
 @media screen and (max-width: 414px) {
   .footer {
     text-align: center;
-    width: 100%;
   }
 }
 
@@ -238,9 +249,25 @@ html {
   }
 }
 
+.disMode__opt {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.pageInfo {
+  padding-left: 50px;
+}
+
 @media screen and (max-width: 414px) {
   .pageInfo {
     display: none;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .pageBar {
+    margin-left: -7px;
   }
 }
 
@@ -259,7 +286,7 @@ html {
 
 /* --- helper --- */
 .container {
-  max-width: 1200px;
+  max-width: 1250px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -291,7 +318,8 @@ html {
 .btn-sm {
   font-size: 12px;
   padding: 8px 12px;
-  margin-right: 7px;
+  margin-left: 7px;
+  margin-bottom: 7px;
 }
 
 @media screen and (max-width: 414px) {
@@ -352,14 +380,6 @@ html {
 
 .js-btn {
   color: #000;
-}
-
-.js-bg__grey {
-  background-color: #f9f9f9;
-}
-
-.js-bg__white {
-  background-color: #fff;
 }
 
 .restraunt {
@@ -526,8 +546,15 @@ html {
   background-color: #fff;
 }
 
+@media screen and (max-width: 768px) {
+  .mode-list .restraunt__wrap {
+    padding: 10px;
+  }
+}
+
 @media screen and (max-width: 414px) {
   .mode-list .restraunt__wrap {
+    padding: 15px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -543,6 +570,12 @@ html {
   margin-right: 15px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .mode-list .restraunt__imgWrap {
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 414px) {
@@ -584,7 +617,7 @@ html {
   text-align: right;
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 768px) {
   .mode-list .restraunt__dist {
     position: static;
     text-align: left;
@@ -595,7 +628,7 @@ html {
   margin-bottom: 10px;
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 768px) {
   .mode-list .restraunt__city {
     display: inline-block;
   }
@@ -611,7 +644,7 @@ html {
   color: #666;
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 768px) {
   .mode-list .restraunt__town {
     -webkit-writing-mode: horizontal-tb;
         -ms-writing-mode: lr-tb;
@@ -623,6 +656,12 @@ html {
 .mode-list .restraunt__content {
   margin-left: 15px;
   color: #000;
+}
+
+@media screen and (max-width: 768px) {
+  .mode-list .restraunt__content {
+    margin-left: 5px;
+  }
 }
 
 @media screen and (max-width: 414px) {
@@ -637,6 +676,13 @@ html {
   margin-bottom: 20px;
 }
 
+@media screen and (max-width: 768px) {
+  .mode-list .restraunt__name {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+}
+
 @media screen and (max-width: 414px) {
   .mode-list .restraunt__name {
     margin-top: 15px;
@@ -649,14 +695,20 @@ html {
   line-height: 1.7em;
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 768px) {
   .mode-list .restraunt__desc {
     display: -webkit-box;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: normal;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .mode-list .restraunt__desc {
+    -webkit-line-clamp: 2;
   }
 }
 
@@ -673,7 +725,6 @@ html {
 }
 
 .contentTbl__td, .contentTbl__th {
-  vertical-align: center;
   padding: 18px 10px;
   border: 1px solid #ddd;
   margin-right: -1px;
@@ -688,6 +739,10 @@ html {
 
 .contentTbl__link {
   color: #02A0D2;
+}
+
+.contentTbl__link:hover {
+  text-decoration: none;
 }
 
 .contentTbl__td {
@@ -705,12 +760,8 @@ html {
   background: linear-gradient(#f8f8f8, #ececec);
 }
 
-.contentTbl__tbody .contentTbl__tr {
-  background-color: #fff;
-}
-
-.contentTbl__tbody .contentTbl__tr:hover {
-  background-color: #eef4f7;
+.contentTbl__tbody:hover .contentTbl__tr:hover {
+  background-color: #EFF4F7;
 }
 
 .cell-sm {
@@ -727,4 +778,12 @@ html {
 
 .cell-xl {
   width: 41.9%;
+}
+
+.js-bg__grey {
+  background-color: #f9f9f9;
+}
+
+.js-bg__white {
+  background-color: #fff;
 }
