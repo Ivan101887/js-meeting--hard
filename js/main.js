@@ -1,5 +1,5 @@
 const advData = ['adv1.png', 'adv2.png', 'adv3.png'];
-const elemContent = document.querySelector('#Content');
+const elemSpot = document.querySelector('#Spot');
 const elemTown = document.querySelector('#Town');
 const elemCity = document.querySelector('#City');
 const elemPageBar = document.querySelector('#PageBar');
@@ -35,7 +35,8 @@ async function getData() {
 }
 
 function render() {
-  // elemContent.innerHTML = makeContentStr(processedData, 0);
+  elemSpot.innerHTML = makeContentStr(processedData, 0);
+  elemSpot.querySelector('#Content').classList.add('mode-list');
   elemPageBar.innerHTML = makeBtnStr(data.length);
   elemPageInfo.innerHTML = makePageInfo(btnIndex);
   elemPageBtn[btnIndex].classList.add('js-pageBtn');
@@ -43,11 +44,12 @@ function render() {
   document.querySelector('#Adv').innerHTML = makeAdvStr()
   elemCity.innerHTML = '<option class="form__option" value="" selected disabled>請選擇行政區域...</option>' + setOption(0);
 }
-function makeContentStr(arr, i, str = '') {
+function makeContentStr(arr, i) {
+  let str = '<ul class="content table" id="Content">'
   arr[i].forEach((item, index) => {
     const desc = item.HostWords;
     str += `
-      <li class="restraunt ${index % 2 !== 0 ? 'js-bg__grey' : 'js-bg__white'}">
+      <li class="restraunt">
         <div class="restraunt__wrap d-flex">
           <figure class="restraunt__imgWrap">
             <img src=${item.PicURL} alt=${item.Name} class="restraunt__img" loading="lazy">
@@ -64,17 +66,43 @@ function makeContentStr(arr, i, str = '') {
               <em class="restraunt__town">${item.Town}</em>
             </div>
             <p class="restraunt__desc">
-              ${isPc ? sliceStr(desc, 100) : slice(desc, 40)}
+              ${isPc ? sliceStr(desc, 100) : sliceStr(desc, 40)}
             </p>
             <p class="restraunt__address text-ellipsis">${item.Address}</p>
           </div>
         </div>
       </li>`
   })
-  return str;
+  return str + '</ul>';
 }
-function makeTbl(arr, i, str = '') {
-
+function makeTblStr(arr, i) {
+  let str = `
+    <table class="contentTbl">
+      <thead class="contentTbl__thead">
+        <tr class="contentTbl__tr">
+          <th class="contentTbl__th cell-sm">編號</th>
+          <th class="contentTbl__th cell-md">行政區域</th>
+          <th class="contentTbl__th cell-md">鄉鎮區</th>
+          <th class="contentTbl__th cel-lg">商家</th>
+          <th class="contentTbl__th cell-xl">地址</th>
+        </tr>
+      </thead>
+      <tbody class="contentTbl__tbody">`
+  arr[i].forEach((item, index) => {
+    str += `
+			<tr class="spotTable__tr${index % 2 !== 0 ? ' js-bg__grey' : 'js-bg__white'}">
+				<td class="contentTbl__td text-right text-cancel">${perPage * btnIndex + index + 1}</td>
+				<td class="contentTbl__td text-cancel">${item.City}</td>
+        <td class="contentTbl__td text-cancel">${item.Town}</td>
+				<td class="contentTbl__td">
+					${item.Url === '' ? '' : `<a class="contentTbl__link" href=${item.Url} target="_blank">`}
+            ${item.Name}
+          ${item.Url === '' ? '' : `</a>`}
+				</td>
+				<td class="contentTbl__td text-ellipsis">${item.Address}</td>
+			</tr>`
+  })
+  return str + '</tbody></table>';
 }
 // 處理資料--分頁資料分段
 function setData(target) {
@@ -155,7 +183,7 @@ function filter(e, arr = []) {
   elemPageBar.innerHTML = makeBtnStr(processedData.length * perPage);
   elemPageInfo.innerHTML = makePageInfo(btnIndex);
   elemPageBtn[btnIndex].classList.add('js-pageBtn');
-  elemContent.innerHTML = makeContentStr(processedData, btnIndex);
+  elemSpot.innerHTML = modeIndex === 2 ? makeTblStr(processedData, btnIndex) : makeContentStr(processedData, btnIndex);
 }
 
 function clickBtn(e) {
@@ -165,16 +193,32 @@ function clickBtn(e) {
     case 'I':
       elemModeBtn[modeIndex].classList.remove('js-btn');
       elemModeBtn[currentIndex].classList.add('js-btn');
-      elemContent.classList.remove(modeArr[modeIndex]);
-      elemContent.classList.add(modeArr[currentIndex]);
+      if (modeIndex !== 1 && currentIndex === 1) {
+        elemSpot.style.overflow = 'auto';
+        elemSpot.innerHTML = makeTblStr(processedData, btnIndex);
+        modeIndex = currentIndex;
+      }
+       else if (modeIndex === 1) {
+        elemSpot.innerHTML = makeContentStr(processedData, btnIndex);
+        elemSpot.querySelector('#Content').classList.add(modeArr[currentIndex]);
+        modeIndex = currentIndex;
+      } else {
+        let elemContent = elemSpot.querySelector('#Content');
+        elemContent.classList.remove(modeArr[modeIndex]);
+        elemContent.classList.add(modeArr[currentIndex]);
+      }
       modeIndex = currentIndex;
       return;
     case 'BUTTON':
       elemPageBtn[btnIndex].classList.remove('js-pageBtn');
       self.classList.add('js-pageBtn');
       btnIndex = currentIndex;
-      elemPageInfo.innerHTML = makePageInfo(btnIndex)
-      elemContent.innerHTML = makeContentStr(processedData, btnIndex);
+      elemPageInfo.innerHTML = makePageInfo(btnIndex);
+      elemSpot.innerHTML = modeIndex === 1 ? makeTblStr(processedData, btnIndex) : makeContentStr(processedData, btnIndex);
+      let elemContent = elemSpot.querySelector('#Content');
+      if (elemContent) {
+        elemContent.classList.add(modeArr[modeIndex]);
+      }
       return;
     default:
       return;
