@@ -198,11 +198,13 @@ function clickBtn(e) {
         elemSpot.innerHTML = makeTblStr(processedData, btnIndex);
         modeIndex = currentIndex;
       }
-       else if (modeIndex === 1) {
+      else if (modeIndex === 1) {
+        elemSpot.style.overflow = 'visible';
         elemSpot.innerHTML = makeContentStr(processedData, btnIndex);
         elemSpot.querySelector('#Content').classList.add(modeArr[currentIndex]);
         modeIndex = currentIndex;
       } else {
+        elemSpot.style.overflow = 'visible';
         let elemContent = elemSpot.querySelector('#Content');
         elemContent.classList.remove(modeArr[modeIndex]);
         elemContent.classList.add(modeArr[currentIndex]);
