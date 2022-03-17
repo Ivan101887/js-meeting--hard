@@ -99,7 +99,7 @@ function makeTblStr(arr, i) {
             ${item.Name}
           ${item.Url === '' ? '' : `</a>`}
 				</td>
-				<td class="contentTbl__td text-ellipsis">${item.Address}</td>
+				<td class="contentTbl__td text-ellipsis" title="${item.Address}">${item.Address}</td>
 			</tr>`
   })
   return str + '</tbody></table>';
@@ -190,22 +190,16 @@ function filter(e, arr = []) {
 function changeMode(e) {
   const self = e.target;
   const currentIndex = parseInt(self.dataset.index, 10);
-  if(self.nodeName !== 'I' || currentIndex === modeIndex) return
+  if (self.nodeName !== 'I' || currentIndex === modeIndex) return;
   elemModeBtn[modeIndex].classList.remove('js-btn');
   elemModeBtn[currentIndex].classList.add('js-btn');
   if (modeIndex !== 1 && currentIndex === 1) {
     elemSpot.style.overflow = 'auto';
     elemSpot.innerHTML = makeTblStr(processedData, btnIndex);
-  }
-  else if (modeIndex === 1) {
+  } else {
     elemSpot.style.overflow = 'visible';
     elemSpot.innerHTML = makeContentStr(processedData, btnIndex);
     elemSpot.querySelector('#Content').classList.add(modeArr[currentIndex]);
-  } else {
-    elemSpot.style.overflow = 'visible';
-    let elemContent = elemSpot.querySelector('#Content');
-    elemContent.classList.remove(modeArr[modeIndex]);
-    elemContent.classList.add(modeArr[currentIndex]);
   }
   modeIndex = currentIndex;
 }

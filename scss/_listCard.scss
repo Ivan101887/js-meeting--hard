@@ -148,6 +148,19 @@
     }
   }
   &-list {
+    &~.pageInfo {
+      padding: {
+        left: 50px;
+      }
+    }
+    margin: {
+      left: 50px;
+    }
+    @include pad {
+      margin: {
+        left: 0;
+      }
+    }
     .restraunt {
       width: 100%;
       background: {

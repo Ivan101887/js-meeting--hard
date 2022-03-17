@@ -102,16 +102,6 @@ html {
   }
 }
 
-.spot {
-  padding-left: 50px;
-}
-
-@media screen and (max-width: 768px) {
-  .spot {
-    padding-left: 0;
-  }
-}
-
 .adv {
   width: 25%;
   padding-left: 15px;
@@ -253,10 +243,6 @@ html {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-}
-
-.pageInfo {
-  padding-left: 50px;
 }
 
 @media screen and (max-width: 414px) {
@@ -533,6 +519,20 @@ html {
   display: none;
 }
 
+.mode-list {
+  margin-left: 50px;
+}
+
+.mode-list ~ .pageInfo {
+  padding-left: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .mode-list {
+    margin-left: 0;
+  }
+}
+
 .mode-list .restraunt {
   width: 100%;
   background-color: transparent;
@@ -718,8 +718,7 @@ html {
 
 .contentTbl {
   table-layout: fixed;
-  width: 885px;
-  margin-right: 0;
+  width: 900px;
   margin-bottom: 10px;
   padding-right: 15px;
 }

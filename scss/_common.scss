@@ -67,16 +67,6 @@ html {
     padding: 5px;
   }
 }
-.spot {
-  padding: {
-    left: 50px;
-  }
-  @include pad {
-    padding: {
-      left: 0;
-    }
-  }
-}
 .adv {
   width: 25%;
   padding: {
@@ -162,7 +152,6 @@ html {
   @include pad {
     width: 100%;
   }
-  
   border: {
     radius: 1px;
   }
@@ -222,10 +211,7 @@ html {
   }
 }
 .pageInfo {
-  padding: {
-    left: 50px;
-  }
-  @include phone {
+   @include phone {
     display: none;
   }
 }
